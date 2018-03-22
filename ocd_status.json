@@ -52,11 +52,11 @@
 			"supportiveEvidence": [
 			  {
 				"id": 1,
-				"fileName": "Supportive_Evidence_FC01_1_1.docx"
+				"fileName": "Supportive_Evidence_PS02_1_1.docx"
 			  },
 			  {
 				"id": 2,
-				"fileName": "Supportive_Evidence_FC01_1_2.docx"
+				"fileName": "Supportive_Evidence_PS02_1_2.docx"
 			  }
 			],
 			"statusControl": "green",
@@ -64,7 +64,28 @@
 			"expiringOn": "2018-06-21",
 			"validity": "3",
 			"description": "!!!!!TO BE DONE!!!!"
-		  }
+		  },
+			{
+				"controlId": "CM02.2",
+				"controlName": "Change validation",
+				"riskArea": "CM",
+				"fileName": "Main_Evidence_CM02_1.docx",
+				"supportiveEvidence": [
+					{
+						"id": 1,
+						"fileName": "Supportive_Evidence_CM02_1_1.docx"
+					},
+					{
+						"id": 2,
+						"fileName": "Supportive_Evidence_CM02_1_2.docx"
+					}
+				],
+				"statusControl": "red",
+				"lastUpdated": "2017-03-20",
+				"expiringOn": "2018-03-20",
+				"validity": "3",
+				"description": "This specific part of control covers the scanning of the source code of the application \nIf you use  CDAAS for depoyment the secure code review is part of the process. Part of this control is also the plan for solving issues that have been detected by scanning the application. Exploitable and suspicious issues are usually blocking and need to be adressed to obtain an approval for change from the CIO Security team. The rest of the issues need to be analysed and require a proper risk response (mitigate, accept, avoid, or transfer)"
+			}
 		]
 	  },
 	  "Account_Interface": {
