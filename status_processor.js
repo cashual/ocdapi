@@ -38,15 +38,9 @@ const updateControl = (info) => {
     ctrl.lastUpdated = dt.format(now, DATE_FMT);    
 }
 
-let reds = getReds('gCashAPI');
-console.log(reds);
-console.log(getControlInfo('gCashAPI', 'FC01.1'));
-
-updateControl({
-    applicationId: 'gCashAPI',
-    controlId: 'FC01.1',
-    statusControl: 'yellow'
-});
-console.log(getControlInfo('gCashAPI', 'FC01.1'));
-
+module.exports = {
+    getControlInfo: getControlInfo,
+    getReds: getReds,
+    updateControl: updateControl
+}
 

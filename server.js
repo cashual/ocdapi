@@ -1,6 +1,8 @@
 const fs = require('fs'); 
 const express = require('express');
 const bodyParser = require('body-parser');
+const sp = require('./status_processor');
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -28,6 +30,28 @@ app.get('/ocd/*', (req, res) => {
     res.header("Content-Type", "application/json");
     res.send(fs.readFileSync('ocd_dynamic/samraj.json'));
 });
+
+app.get('/control/:app/:ctrl', (req, res) => {
+    const appId = req.params.app;
+    const ctrl = req.params.ctrl;
+    res.header("Content-Type", "application/json");
+    res.send(JSON.stringify(sp.getControlInfo(appId, ctrl)));
+});
+
+app.get('/reds/:app', (req, res) => {
+    const appId = req.params.app;
+    res.header("Content-Type", "application/json");
+    res.send(JSON.stringify(sp.getReds(appId)));
+});
+
+app.put('/control/:app/:ctrl', (req, res) => {
+    const appId = req.params.app;
+    const ctrl = req.params.ctrl;
+    const info = req.body;
+    sp.updateControl({ ...info, applicationId: appId, controlId: ctrl});
+    res.header("Content-Type", "application/json");
+    res.send(sp.getControlInfo(appId, ctrl));
+})
 
 var server = app.listen(8081, function () {
    var host = server.address().address
