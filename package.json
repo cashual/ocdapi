@@ -1,0 +1,28 @@
+{
+  "name": "ocdapi",
+  "version": "1.0.0",
+  "description": "It mimics and OCD server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cashual/ocdapi.git"
+  },
+  "keywords": [
+    "OCD",
+    "Cashual"
+  ],
+  "author": "Ovidiu Ionescu & Samraj T",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/cashual/ocdapi/issues"
+  },
+  "homepage": "https://github.com/cashual/ocdapi#readme",
+  "dependencies": {
+    "date-and-time": "^0.6.2",
+    "express": "^4.16.3"
+  }
+}
